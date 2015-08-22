@@ -1,0 +1,21 @@
+{
+  "name": "songwinsky",
+  "version": "0.0.0",
+  "authors": [
+    "skybach <skybach@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1 songwinsky
+
+	form(action="/upload", method="post", enctype="multipart/form-data")
+		input.btn.btn-default(type="file", name="upload_file")
+		input.btn.btn-success(type="submit" value='upload')
+
+	form(action="/download", method="post")
+		for file in files
+			div.checkbox
+				label
+					input(type='checkbox', name='files', value=file)
+					= file
+					// a(href="/view?file="+file)= file
+
+		div
+			input.btn.btn-warning(type='submit' value='download')

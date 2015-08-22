@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+	form(action='/archive', method='post')
+		table.table.table-condensed.table-striped
+			each row, rowIndex in csv
+				if rowIndex == 0
+					tr
+						th
+						each col, colIndex in row
+							th(style='vertical-align: bottom')= col
+					tr
+						th= "type"
+						each col, colIndex in row
+							th
+								select.form-control(name='type'+colIndex, colindex=colIndex, onchange='hash(this)')
+									option 
+									option(value='0') Scramble
+									option(value='1') Shuffle
+									option(value='2') Group Shuffle
+									option(value='3') Random Offset
+									option(value='4') Drop
+				else
+					tr
+						th= rowIndex
+						each col, colIndex in row
+							td(colindex=colIndex, data=col)= col
+
+		input.btn.btn-primary(type='submit')
+
